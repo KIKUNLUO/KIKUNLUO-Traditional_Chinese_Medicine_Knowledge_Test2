@@ -114,155 +114,731 @@
         // 所有题目数据
 const questionsData = [
 {
-    question: "“升浮”属____，“沉降”属____。",
-    options: ["A. 阳；阴", "B. 阴；阳", "C. 表；里", "D. 寒；热"],
+    question: "根据升降浮沉理论，'升浮'属性属于：",
+    options: ["A. 阴", "B. 阳", "C. 表", "D. 里"],
+    answer: "B"
+},
+{
+    question: "'酸味'药物主要归经于：",
+    options: ["A. 肝经", "B. 心经", "C. 脾经", "D. 肺经"],
     answer: "A"
 },
 {
-    question: "五味归经中，酸味主要入哪一脏？",
-    options: ["A. 心", "B. 肝", "C. 脾", "D. 肺"],
-    answer: "B"
-},
-{
-    question: "中国历史上第一部官修本草是？",
+    question: "我国历史上第一部官修本草著作是：",
     options: ["A. 《本草纲目》", "B. 《新修本草》", "C. 《神农本草经》", "D. 《雷公炮炙论》"],
-    answer: "B"
+    answer: "C"
 },
 {
-    question: "“四大怀药”不包括以下哪种？",
+    question: "以下不属于'四大怀药'的是：",
     options: ["A. 地黄", "B. 牛膝", "C. 人参", "D. 山药"],
     answer: "C"
 },
 {
-    question: "妊娠禁用药是？",
-    options: ["A. 牛膝", "B. 巴豆", "C. 红花", "D. 大黄"],
-    answer: "B"
-},
-{
-    question: "煎药忌用的器具是？",
-    options: ["A. 陶瓷砂锅", "B. 铁锅", "C. 玻璃罐", "D. 紫砂壶"],
-    answer: "B"
-},
-{
-    question: "“母子”关系在五行中是指？",
-    options: ["A. 相生", "B. 相克", "C. 相乘", "D. 相侮"],
-    answer: "A"
-},
-{
-    question: "弦脉多见于哪种病症？",
-    options: ["A. 肝胆病", "B. 肺病", "C. 心病", "D. 肾病"],
-    answer: "A"
-},
-{
-    question: "“假神”的表现为？",
-    options: ["A. 突然颧赤如妆", "B. 面色苍白", "C. 四肢冰冷", "D. 呼吸微弱"],
-    answer: "A"
-},
-{
-    question: "头顶痛属于哪条经脉？",
-    options: ["A. 阳明经", "B. 少阳经", "C. 太阳经", "D. 厥阴经"],
-    answer: "D"
-},
-{
-    question: "“肝”在五行中属____，其华在____。",
-    options: ["A. 木；爪", "B. 火；面", "C. 土；唇", "D. 金；毛"],
-    answer: "A"
-},
-{
-    question: "“心”在五志中对应的是？",
-    options: ["A. 怒", "B. 喜", "C. 思", "D. 悲"],
-    answer: "B"
-},
-{
-    question: "“脾”在五液中分泌的是？",
-    options: ["A. 泪", "B. 汗", "C. 涎", "D. 涕"],
-    answer: "C"
-},
-{
-    question: "“肺开窍于____，其液为____。”",
-    options: ["A. 目；泪", "B. 鼻；涕", "C. 口；涎", "D. 耳；唾"],
-    answer: "B"
-},
-{
-    question: "“肾为先天之本”，其主____，华在____。",
-    options: ["A. 水；发", "B. 骨；发", "C. 髓；爪", "D. 精；面"],
-    answer: "B"
-},
-{
-    question: "麻黄汤的组成不包括？",
-    options: ["A. 麻黄", "B. 桂枝", "C. 白芍", "D. 炙甘草"],
-    answer: "C"
-},
-{
-    question: "“浙八味”不包括以下哪种？",
+    question: "'浙八味'不包括：",
     options: ["A. 白术", "B. 白芍", "C. 人参", "D. 玄参"],
     answer: "C"
 },
 {
-    question: "“四大南药”是？",
-    options: ["A. 阳春砂、巴戟天、槟榔、益智仁", "B. 黄连、人参、地黄、山药", "C. 白术、白芍、贝母、菊花", "D. 乌梅、玄参、防风、黄芪"],
-    answer: "A"
-},
-{
-    question: "“十八反”中，甘草反？",
-    options: ["A. 甘遂", "B. 丁香", "C. 人参", "D. 官桂"],
-    answer: "A"
-},
-{
-    question: "“后下药”煎煮时间为？",
-    options: ["A. 5-10分钟", "B. 15-20分钟", "C. 30分钟", "D. 1小时"],
-    answer: "A"
-},
-{
-    question: "“胃脘刺痛，痛有定处”属于？",
-    options: ["A. 气滞", "B. 血瘀", "C. 痰湿", "D. 虚寒"],
+    question: "我国最早的中药炮制专著是：",
+    options: ["A. 《新修本草》", "B. 《雷公炮炙论》", "C. 《本草经集注》", "D. 《本草纲目》"],
     answer: "B"
 },
 {
-    question: "“燥苔”的特点是？",
-    options: ["A. 干枯无津", "B. 湿润滑腻", "C. 黄厚腻", "D. 白滑"],
-    answer: "A"
-},
-{
-    question: "“舌中”对应哪一脏腑？",
-    options: ["A. 心肺", "B. 脾胃", "C. 肝胆", "D. 肾"],
+    question: "以下属于妊娠禁用药的是：",
+    options: ["A. 牛膝", "B. 巴豆", "C. 红花", "D. 大黄"],
     answer: "B"
 },
 {
-    question: "“滋水涵木法”是指？",
+    question: "煎药时最适宜的器具是：",
+    options: ["A. 铁锅", "B. 铜锅", "C. 陶瓷砂锅", "D. 铝锅"],
+    answer: "C"
+},
+{
+    question: "紫苏叶的煎煮要求是：",
+    options: ["A. 先煎", "B. 后下", "C. 包煎", "D. 烊化"],
+    answer: "B"
+},
+{
+    question: "麻黄汤中麻黄与桂枝的配伍比例是：",
+    options: ["A. 3:2", "B. 2:1", "C. 1:1", "D. 3:1"],
+    answer: "A"
+},
+{
+    question: "四君子汤的组成不包括：",
+    options: ["A. 人参", "B. 白术", "C. 茯苓", "D. 当归"],
+    answer: "D"
+},
+{
+    question: "弦脉多见于：",
+    options: ["A. 肝胆病", "B. 肺病", "C. 心病", "D. 肾病"],
+    answer: "A"
+},
+{
+    question: "脉象一息五至以上多提示：",
+    options: ["A. 寒证", "B. 热证", "C. 虚证", "D. 实证"],
+    answer: "B"
+},
+{
+    question: "奇经八脉的特点是：",
+    options: ["A. 与脏腑直接相连", "B. 有表里配伍关系", "C. 既不直属脏腑也无表里关系", "D. 只有六条经脉"],
+    answer: "C"
+},
+{
+    question: "'滋水涵木法'是指：",
     options: ["A. 滋肾阴以养肝阴", "B. 温肾阳以补脾阳", "C. 补脾气以益肺气", "D. 疏肝健脾"],
     answer: "A"
 },
 {
-    question: "“益火补土法”中的“火”指？",
-    options: ["A. 心火", "B. 命门火（肾阳）", "C. 肝火", "D. 肺火"],
-    answer: "B"
-},
-{
-    question: "《难经》提到“见肝之病，知肝传脾”，体现了五行中的？",
-    options: ["A. 相生", "B. 相克", "C. 相乘", "D. 相侮"],
-    answer: "B"
-},
-{
-    question: "《神农本草经》记载药物多少种？",
-    options: ["A. 365", "B. 730", "C. 1892", "D. 1200"],
+    question: "辛味药物的主要作用是：",
+    options: ["A. 能散能行", "B. 能补能缓", "C. 能收能涩", "D. 能泄能燥"],
     answer: "A"
 },
 {
-    question: "《雷公炮炙论》是？",
-    options: ["A. 最早的中药炮制专著", "B. 第一部官修本草", "C. 现代药学辞典", "D. 方剂学著作"],
+    question: "苦味药物的主要作用是：",
+    options: ["A. 能散能行", "B. 能补能缓", "C. 能收能涩", "D. 能泄能燥"],
+    answer: "D"
+},
+{
+    question: "'焦三仙'是指：",
+    options: ["A. 焦神曲、焦山楂、焦麦芽", "B. 焦白术、焦山楂、焦麦芽", "C. 焦神曲、焦白术、焦麦芽", "D. 焦神曲、焦山楂、焦白术"],
     answer: "A"
 },
 {
-    question: "“有诸内，必形诸外”出自？",
+    question: "'双活'是指：",
+    options: ["A. 羌活和独活", "B. 生地和熟地", "C. 赤芍和白芍", "D. 川乌和草乌"],
+    answer: "A"
+},
+{
+    question: "'肺其华在'：",
+    options: ["A. 爪", "B. 面", "C. 毛", "D. 发"],
+    answer: "C"
+},
+{
+    question: "'肾开窍于'：",
+    options: ["A. 目", "B. 舌", "C. 口", "D. 耳"],
+    answer: "D"
+},
+{
+    question: "十岁儿童的用药剂量一般是成人量的：",
+    options: ["A. 1/3", "B. 1/2", "C. 2/3", "D. 全量"],
+    answer: "D"
+},
+{
+    question: "控制药材贮藏湿度的适宜范围是：",
+    options: ["A. 45%-50%", "B. 55%-60%", "C. 65%-70%", "D. 75%-80%"],
+    answer: "C"
+},
+{
+    question: "芒硝的炮制方法是：",
+    options: ["A. 酒制", "B. 醋制", "C. 渗析制霜", "D. 炒炭"],
+    answer: "C"
+},
+{
+    question: "'酒制升提，姜制温散'体现了炮制的：",
+    options: ["A. 四气五味理论", "B. 升降浮沉理论", "C. 归经理论", "D. 毒性控制理论"],
+    answer: "B"
+},
+{
+    question: "《神农本草经》记载药物数量为：",
+    options: ["A. 365种", "B. 730种", "C. 1892种", "D. 1200种"],
+    answer: "A"
+},
+{
+    question: "'有诸内，必形诸外'出自：",
     options: ["A. 《孟子》", "B. 《黄帝内经》", "C. 《伤寒论》", "D. 《难经》"],
     answer: "A"
 },
 {
-    question: "“能合色脉，可以万全”出自？",
-    options: ["A. 《素问》", "B. 《本草纲目》", "C. 《新修本草》", "D. 《雷公炮炙论》"],
+    question: "在五行归类中，'肾'对应的五色是：",
+    options: ["A. 青", "B. 赤", "C. 黄", "D. 黑"],
+    answer: "D"
+},
+{
+    question: "'肺'在五液中对应的是：",
+    options: ["A. 泪", "B. 汗", "C. 涎", "D. 涕"],
+    answer: "D"
+},
+{
+    question: "'胃脘刺痛，痛有定处'多属：",
+    options: ["A. 气滞", "B. 血瘀", "C. 痰湿", "D. 虚寒"],
+    answer: "B"
+},
+{
+    question: "假神的典型表现是：",
+    options: ["A. 面色苍白", "B. 突然颧赤如妆", "C. 四肢冰冷", "D. 呼吸微弱"],
+    answer: "B"
+},
+{
+    question: "前额痛主要属于哪条经脉的病变：",
+    options: ["A. 阳明经", "B. 少阳经", "C. 太阳经", "D. 厥阴经"],
     answer: "A"
+},
+{
+    question: "偏头痛主要属于哪条经脉的病变：",
+    options: ["A. 阳明经", "B. 少阳经", "C. 太阳经", "D. 厥阴经"],
+    answer: "B"
+},
+{
+    question: "被称为'阴脉之海'的是：",
+    options: ["A. 任脉", "B. 督脉", "C. 冲脉", "D. 带脉"],
+    answer: "A"
+},
+{
+    question: "被称为'阳脉之海'的是：",
+    options: ["A. 任脉", "B. 督脉", "C. 冲脉", "D. 带脉"],
+    answer: "B"
+},
+{
+    question: "以下哪三条经脉都源于胞中：",
+    options: ["A. 任脉、督脉、冲脉", "B. 任脉、督脉、带脉", "C. 任脉、冲脉、带脉", "D. 督脉、冲脉、带脉"],
+    answer: "A"
+},
+{
+    question: "手太阴肺经相表里的经脉是：",
+    options: ["A. 手阳明大肠经", "B. 手少阳三焦经", "C. 手太阳小肠经", "D. 手厥阴心包经"],
+    answer: "A"
+},
+{
+    question: "手厥阴心包经相表里的经脉是：",
+    options: ["A. 手阳明大肠经", "B. 手少阳三焦经", "C. 手太阳小肠经", "D. 手少阴心经"],
+    answer: "B"
+},
+{
+    question: "'滋水涵木法'是指：",
+    options: ["A. 滋肾阴以养肝阴", "B. 温肾阳以补脾阳", "C. 补脾气以益肺气", "D. 疏肝健脾"],
+    answer: "A"
+},
+{
+    question: "'益火补土法'中的'火'指的是：",
+    options: ["A. 心火", "B. 命门火（肾阳）", "C. 相火", "D. 君火"],
+    answer: "B"
+},
+{
+    question: "'培土生金法'是指：",
+    options: ["A. 滋肾阴以养肝阴", "B. 温肾阳以补脾阳", "C. 补脾气以益肺气", "D. 疏肝健脾"],
+    answer: "C"
+},
+{
+    question: "'抑木扶土法'是指：",
+    options: ["A. 滋肾阴以养肝阴", "B. 温肾阳以补脾阳", "C. 补脾气以益肺气", "D. 疏肝健脾"],
+    answer: "D"
+},
+{
+    question: "《难经》中'见肝之病，知肝传脾'体现了：",
+    options: ["A. 五行相生", "B. 五行相克", "C. 五行相乘", "D. 五行相侮"],
+    answer: "B"
+},
+{
+    question: "'肺其华在'：",
+    options: ["A. 爪", "B. 面", "C. 毛", "D. 发"],
+    answer: "C"
+},
+{
+    question: "'肺开窍于'：",
+    options: ["A. 目", "B. 舌", "C. 鼻", "D. 耳"],
+    answer: "C"
+},
+{
+    question: "'肺在志为'：",
+    options: ["A. 怒", "B. 喜", "C. 悲", "D. 恐"],
+    answer: "C"
+},
+{
+    question: "'肺在液为'：",
+    options: ["A. 泪", "B. 汗", "C. 唾", "D. 涕"],
+    answer: "D"
+},
+{
+    question: "被称为'先天之本'的是：",
+    options: ["A. 心", "B. 肝", "C. 脾", "D. 肾"],
+    answer: "D"
+},
+{
+    question: "'肾其华在'：",
+    options: ["A. 爪", "B. 面", "C. 唇", "D. 发"],
+    answer: "D"
+},
+{
+    question: "'肾开窍于'：",
+    options: ["A. 目", "B. 舌", "C. 耳", "D. 口"],
+    answer: "C"
+},
+{
+    question: "'肾在志为'：",
+    options: ["A. 怒", "B. 喜", "C. 思", "D. 恐"],
+    answer: "D"
+},
+{
+    question: "'肾在液为'：",
+    options: ["A. 泪", "B. 汗", "C. 唾", "D. 涕"],
+    answer: "C"
+},
+{
+    question: "五行中'金'的特性是：",
+    options: ["A. 曲直", "B. 炎上", "C. 从革", "D. 润下"],
+    answer: "C"
+},
+{
+    question: "'有诸内，必形诸外'出自：",
+    options: ["A. 《孟子》", "B. 《黄帝内经》", "C. 《伤寒论》", "D. 《难经》"],
+    answer: "A"
+},
+{
+    question: "'能合色脉，可以万全'出自：",
+    options: ["A. 《素问》", "B. 《灵枢》", "C. 《伤寒论》", "D. 《金匮要略》"],
+    answer: "A"
+},
+{
+    question: "五行中'木'对应的五味是：",
+    options: ["A. 酸", "B. 苦", "C. 甘", "D. 辛"],
+    answer: "A"
+},
+{
+    question: "五色中'赤'对应的是哪个脏腑：",
+    options: ["A. 肝", "B. 心", "C. 脾", "D. 肺"],
+    answer: "B"
+},
+{
+    question: "'长夏'对应的五行是：",
+    options: ["A. 木", "B. 火", "C. 土", "D. 金"],
+    answer: "C"
+},
+{
+    question: "五腑中与'肺'相表里的是：",
+    options: ["A. 胆", "B. 小肠", "C. 胃", "D. 大肠"],
+    answer: "D"
+},
+{
+    question: "'肾'对应的五华是：",
+    options: ["A. 爪", "B. 面", "C. 唇", "D. 发"],
+    answer: "D"
+},
+{
+    question: "五志中'思'对应的脏腑是：",
+    options: ["A. 肝", "B. 心", "C. 脾", "D. 肺"],
+    answer: "C"
+},
+{
+    question: "五液中'涎'对应的脏腑是：",
+    options: ["A. 肝", "B. 心", "C. 脾", "D. 肺"],
+    answer: "C"
+},
+{
+    question: "中药材贮藏的相对湿度应控制在：",
+    options: ["A. 45%-50%", "B. 55%-60%", "C. 65%-70%", "D. 75%-80%"],
+    answer: "C"
+},
+{
+    question: "'双活'指的是：",
+    options: ["A. 羌活和独活", "B. 生地和熟地", "C. 赤芍和白芍", "D. 川乌和草乌"],
+    answer: "A"
+},
+{
+    question: "'焦三仙'不包括：",
+    options: ["A. 焦神曲", "B. 焦山楂", "C. 焦麦芽", "D. 焦白术"],
+    answer: "D"
+},
+{
+    question: "我国现存最早的本草专著是：",
+    options: ["A. 《新修本草》", "B. 《神农本草经》", "C. 《本草纲目》", "D. 《证类本草》"],
+    answer: "B"
+},
+{
+    question: "《神农本草经》记载药物数量为：",
+    options: ["A. 365种", "B. 730种", "C. 844种", "D. 1892种"],
+    answer: "A"
+},
+{
+    question: "芒硝的炮制方法是：",
+    options: ["A. 酒制", "B. 醋制", "C. 渗析制霜", "D. 炒炭"],
+    answer: "C"
+},
+{
+    question: "烧伤急救处理首先应该：",
+    options: ["A. 涂抹药膏", "B. 用冷水冲洗", "C. 包扎伤口", "D. 服用止痛药"],
+    answer: "B"
+},
+{
+    question: "中药煎煮最适宜的器具是：",
+    options: ["A. 铁锅", "B. 铜锅", "C. 陶瓷砂锅", "D. 不锈钢锅"],
+    answer: "C"
+},
+{
+    question: "洗手最少需要多长时间：",
+    options: ["A. 5秒", "B. 10秒", "C. 20秒", "D. 30秒"],
+    answer: "C"
+},
+{
+    question: "漏芦的禁忌是：",
+    options: ["A. 孕妇忌服", "B. 儿童忌服", "C. 老人忌服", "D. 经期忌服"],
+    answer: "A"
+},
+{
+    question: "中药材含水量一般应保持在：",
+    options: ["A. 5%以下", "B. 10%以下", "C. 15%以下", "D. 20%以下"],
+    answer: "C"
+},
+{
+    question: "五气中'燥'对应的季节是：",
+    options: ["A. 春", "B. 夏", "C. 秋", "D. 冬"],
+    answer: "C"
+},
+{
+    question: "五官中'舌'对应的脏腑是：",
+    options: ["A. 肝", "B. 心", "C. 脾", "D. 肺"],
+    answer: "B"
+},
+{
+    question: "四川的道地药材是：",
+    options: ["A. 人参", "B. 黄连", "C. 地黄", "D. 白术"],
+    answer: "B"
+},
+{
+    question: "以下不属于'四大怀药'的是：",
+    options: ["A. 地黄", "B. 牛膝", "C. 菊花", "D. 人参"],
+    answer: "D"
+},
+{
+    question: "'浙八味'不包括：",
+    options: ["A. 白术", "B. 白芍", "C. 贝母", "D. 黄连"],
+    answer: "D"
+},
+{
+    question: "以下属于'四大南药'的是：",
+    options: ["A. 阳春砂", "B. 黄连", "C. 人参", "D. 当归"],
+    answer: "A"
+},
+{
+    question: "‘十八反’中，甘草不能与以下哪味药同用：",
+    options: ["A. 甘遂", "B. 人参", "C. 白芍", "D. 细辛"],
+    answer: "A"
+},
+{
+    question: "‘十九畏’中，硫磺畏：",
+    options: ["A. 朴硝", "B. 砒霜", "C. 五灵脂", "D. 石脂"],
+    answer: "A"
+},
+{
+    question: "以下需要后下的药物是：",
+    options: ["A. 薄荷", "B. 黄芪", "C. 熟地", "D. 当归"],
+    answer: "A"
+},
+{
+    question: "胃脘刺痛，痛有定处多属于：",
+    options: ["A. 胃气滞", "B. 胃血瘀", "C. 胃虚寒", "D. 胃热盛"],
+    answer: "B"
+},
+{
+    question: "‘脾为生痰之源，肺为贮痰之器’说明：",
+    options: ["A. 脾肺关系", "B. 肝肾关系", "C. 心肾关系", "D. 心肺关系"],
+    answer: "A"
+},
+{
+    question: "十岁儿童的用药剂量一般是：",
+    options: ["A. 成人1/3量", "B. 成人1/2量", "C. 成人2/3量", "D. 成人全量"],
+    answer: "D"
+},
+{
+    question: "胸胁胀痛，太息易怒多属于：",
+    options: ["A. 气滞", "B. 血瘀", "C. 痰湿", "D. 虚寒"],
+    answer: "A"
+},
+{
+    question: "舌中部主要反映哪个脏腑的病变：",
+    options: ["A. 心肺", "B. 脾胃", "C. 肝胆", "D. 肾"],
+    answer: "B"
+},
+{
+    question: "舌绛少苔有裂纹多提示：",
+    options: ["A. 阴虚火旺", "B. 气血两虚", "C. 痰湿内阻", "D. 阳虚水泛"],
+    answer: "A"
+},
+{
+    question: "香港中医药管理委员会成立于：",
+    options: ["A. 1997年", "B. 1999年", "C. 2001年", "D. 2003年"],
+    answer: "B"
+},
+{
+    question: "以下配伍属于‘十九畏’的是：",
+    options: ["A. 人参畏五灵脂", "B. 甘草反甘遂", "C. 乌头反半夏", "D. 藜芦反人参"],
+    answer: "A"
+},
+{
+    question: "东北三省的道地药材是：",
+    options: ["A. 黄连", "B. 人参", "C. 地黄", "D. 白术"],
+    answer: "B"
+},
+{
+    question: "‘燥苔’的特征是：",
+    options: ["A. 湿润光滑", "B. 干枯无津", "C. 黄厚腻", "D. 白滑"],
+    answer: "B"
+},
+{
+    question: "舌尖主要反映哪个脏腑的病变：",
+    options: ["A. 心肺", "B. 脾胃", "C. 肝胆", "D. 肾"],
+    answer: "A"
+},
+{
+    question: "以下需要后下的药物是：",
+    options: ["A. 砂仁", "B. 黄芪", "C. 熟地", "D. 当归"],
+    answer: "A"
+},
+{
+    question: "‘实则泻之’的治疗原则适用于：",
+    options: ["A. 实证", "B. 虚证", "C. 寒证", "D. 热证"],
+    answer: "A"
+},
+{
+    question: "八纲辨证不包括以下哪项？",
+    options: ["A. 阴阳", "B. 表里", "C. 寒热", "D. 虚实", "E. 气血"],
+    answer: "E"
+},
+{
+    question: "中药四气是指：",
+    options: ["A. 酸苦甘辛", "B. 寒热温凉", "C. 升降浮沉", "D. 表里虚实"],
+    answer: "B"
+},
+{
+    question: "香港中药材主要来源是：",
+    options: ["A. 本地生产", "B. 内地输入", "C. 东南亚进口", "D. 欧美进口"],
+    answer: "B"
+},
+{
+    question: "中药鉴定的主要依据是：",
+    options: ["A. 《本草纲目》", "B. 《国家药典》", "C. 《神农本草经》", "D. 《新修本草》"],
+    answer: "B"
+},
+{
+    question: "断面呈'云锦状花纹'的是：",
+    options: ["A. 黄连", "B. 何首乌", "C. 黄芪", "D. 党参"],
+    answer: "B"
+},
+{
+    question: "'狮子头'是指哪种药材的特征？",
+    options: ["A. 人参", "B. 党参", "C. 黄芪", "D. 甘草"],
+    answer: "B"
+},
+{
+    question: "'菊花心'是哪种药材的特征？",
+    options: ["A. 黄连", "B. 黄芪", "C. 当归", "D. 熟地"],
+    answer: "B"
+},
+{
+    question: "以味酸为佳的药材是：",
+    options: ["A. 乌梅", "B. 玄参", "C. 黄连", "D. 甘草"],
+    answer: "A"
+},
+{
+    question: "人参属于哪个科？",
+    options: ["A. 毛茛科", "B. 五加科", "C. 罗摩科", "D. 菊科"],
+    answer: "B"
+},
+{
+    question: "辛味药的主要作用是：",
+    options: ["A. 能补能缓", "B. 能散能行", "C. 能收能涩", "D. 能泄能燥"],
+    answer: "B"
+},
+{
+    question: "苦味药的主要作用是：",
+    options: ["A. 能补能缓", "B. 能散能行", "C. 能收能涩", "D. 能泄能燥"],
+    answer: "D"
+},
+{
+    question: "咸味药的主要作用是：",
+    options: ["A. 软坚散结", "B. 补益和中", "C. 发散解表", "D. 收敛固涩"],
+    answer: "A"
+},
+{
+    question: "中药四大鉴定方法不包括：",
+    options: ["A. 来源鉴定", "B. 性状鉴定", "C. 显微鉴定", "D. 化学合成"],
+    answer: "D"
+},
+{
+    question: "'雁颈芦、铁线纹、珍珠点'是哪种药材的特征？",
+    options: ["A. 党参", "B. 人参", "C. 西洋参", "D. 丹参"],
+    answer: "B"
+},
+{
+    question: "根茎断面中空的药材是：",
+    options: ["A. 白薇", "B. 白前", "C. 黄连", "D. 黄芪"],
+    answer: "B"
+},
+{
+    question: "淡味药的主要作用是：",
+    options: ["A. 渗湿利水", "B. 补益和中", "C. 发散解表", "D. 收敛固涩"],
+    answer: "A"
+},
+{
+    question: "酸味药的主要作用是：",
+    options: ["A. 能收能涩", "B. 能补能缓", "C. 能散能行", "D. 能泄能燥"],
+    answer: "A"
+},
+{
+    question: "以色黑为佳的药材是：",
+    options: ["A. 乌梅", "B. 玄参", "C. 黄连", "D. 黄芪"],
+    answer: "B"
+},
+{
+    question: "断面以色黄为佳的药材是：",
+    options: ["A. 乌梅", "B. 玄参", "C. 黄连", "D. 黄芪"],
+    answer: "C"
+},
+{
+    question: "'蚯蚓头'是哪种药材的特征？",
+    options: ["A. 防风", "B. 黄芪", "C. 党参", "D. 人参"],
+    answer: "A"
+},
+{
+    question: "中药取样比例一般为：",
+    options: ["A. 1%", "B. 3%", "C. 5%", "D. 10%"],
+    answer: "C"
+},
+{
+    question: "黄连属于哪个科？",
+    options: ["A. 五加科", "B. 毛茛科", "C. 罗摩科", "D. 菊科"],
+    answer: "B"
+},
+{
+    question: "甘味药的主要作用是：",
+    options: ["A. 能补能缓", "B. 能散能行", "C. 能收能涩", "D. 能泄能燥"],
+    answer: "A"
+},
+{
+    question: "气清香的优质药材是：",
+    options: ["A. 檀香", "B. 黄连", "C. 黄芪", "D. 党参"],
+    answer: "A"
+},
+{
+    question: "白薇的鉴别特征是：",
+    options: ["A. 根茎断面中空", "B. 根茎断面不中空", "C. 有云锦状花纹", "D. 有菊花心"],
+    answer: "B"
+},
+{
+    question: "白前属于哪个科？",
+    options: ["A. 五加科", "B. 毛茛科", "C. 罗摩科", "D. 菊科"],
+    answer: "C"
+},
+{
+    question: "咸味药主要用于治疗：",
+    options: ["A. 瘿瘤痰核", "B. 表证", "C. 虚证", "D. 热证"],
+    answer: "A"
+},
+{
+    question: "性状鉴定的主要内容不包括：",
+    options: ["A. 形状", "B. 颜色", "C. 显微结构", "D. 气味"],
+    answer: "C"
+},
+{
+    question: "能'收敛固涩'的是：",
+    options: ["A. 辛味", "B. 甘味", "C. 酸味", "D. 苦味"],
+    answer: "C"
+},
+{
+    question: "可作为鉴别依据的断面特征是：",
+    options: ["A. 云锦状花纹", "B. 颜色", "C. 气味", "D. 味道"],
+    answer: "A"
+},
+{
+    question: "理化鉴定的主要内容是：",
+    options: ["A. 化学成分分析", "B. 外形观察", "C. 显微观察", "D. 产地考证"],
+    answer: "A"
+},
+{
+    question: "八纲中'表里'主要辨别：",
+    options: ["A. 病位深浅", "B. 疾病性质", "C. 邪正盛衰", "D. 阴阳属性"],
+    answer: "A"
+},
+{
+    question: "经验鉴定的主要依据是：",
+    options: ["A. 传统鉴别经验", "B. 仪器分析", "C. 化学成分", "D. 分子生物学"],
+    answer: "A"
+},
+{
+    question: "能'渗湿利水'的是：",
+    options: ["A. 辛味", "B. 甘味", "C. 淡味", "D. 苦味"],
+    answer: "C"
+},
+{
+    question: "显微鉴定的主要观察内容是：",
+    options: ["A. 组织构造", "B. 外形特征", "C. 化学成分", "D. 产地特征"],
+    answer: "A"
+},
+{
+    question: "八纲中'寒热'主要辨别：",
+    options: ["A. 病位深浅", "B. 疾病性质", "C. 邪正盛衰", "D. 阴阳属性"],
+    answer: "B"
+},
+{
+    question: "能'坚阴'的是：",
+    options: ["A. 辛味", "B. 甘味", "C. 苦味", "D. 咸味"],
+    answer: "C"
+},
+{
+    question: "来源鉴定的主要内容是：",
+    options: ["A. 原植物鉴定", "B. 化学成分", "C. 显微特征", "D. 药理作用"],
+    answer: "A"
+},
+{
+    question: "八纲中'虚实'主要辨别：",
+    options: ["A. 病位深浅", "B. 疾病性质", "C. 邪正盛衰", "D. 阴阳属性"],
+    answer: "C"
+},
+{
+    question: "能'补益和中'的是：",
+    options: ["A. 辛味", "B. 甘味", "C. 酸味", "D. 苦味"],
+    answer: "B"
+},
+{
+    question: "中药通常分为几大类？",
+    options: ["A. 2类", "B. 3类", "C. 4类", "D. 5类"],
+    answer: "B"
+},
+{
+    question: "下列哪种不是中药的鉴定方法？",
+    options: ["A. 来源鉴定", "B. 性状鉴定", "C. 显微鉴定", "D. 基因测序"],
+    answer: "D"
+},
+{
+    question: "‘能散能行’是哪类药物的特点？",
+    options: ["A. 辛味药", "B. 甘味药", "C. 酸味药", "D. 苦味药"],
+    answer: "A"
+},
+{
+    question: "治疗筋脉拘急疼痛常用：",
+    options: ["A. 辛味药", "B. 甘味药", "C. 酸味药", "D. 苦味药"],
+    answer: "B"
+},
+{
+    question: "治疗虚汗泄泻常用：",
+    options: ["A. 辛味药", "B. 甘味药", "C. 酸味药", "D. 苦味药"],
+    answer: "C"
+},
+{
+    question: "治疗瘿瘤痰核常用：",
+    options: ["A. 辛味药", "B. 甘味药", "C. 酸味药", "D. 咸味药"],
+    answer: "D"
+},
+{
+    question: "白薇和白前属于同一科的植物，这个科是：",
+    options: ["A. 五加科", "B. 毛茛科", "C. 罗摩科", "D. 菊科"],
+    answer: "C"
+},
+{
+    question: "下列哪种药材不属于五加科？",
+    options: ["A. 人参", "B. 西洋参", "C. 三七", "D. 黄连"],
+    answer: "D"
+},
+{
+    question: "中药性状鉴定不包括：",
+    options: ["A. 形状", "B. 颜色", "C. 显微结构", "D. 气味"],
+    answer: "C"
+},
+{
+    question: "下列哪种药材断面不中空？",
+    options: ["A. 白前", "B. 白薇", "C. 黄连", "D. 黄芪"],
+    answer: "B"
 }
+
            ];
         
         // 随机排列数组
