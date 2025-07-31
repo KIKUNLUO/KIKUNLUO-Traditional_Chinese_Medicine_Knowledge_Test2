@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中药知识测验2</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .quiz-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .question {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .options {
+            margin-left: 10px;
+        }
+        .option {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block; /* 确保每个选项在新行上 */
+        }
+        .option:hover {
+            background-color: #e8f4fc;
+        }
+        .option input[type="radio"] {
+            margin-right: 10px;
+        }
+        .feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .submit-btn, .restart-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover, .restart-btn:hover {
+            background-color: #2980b9;
+        }
+        .score-display {
+            text-align: center;
+            font-size: 18px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .restart-btn {
+            display: block;
+            margin: 20px auto;
+            background-color: #9b59b6;
+        }
+        .restart-btn:hover {
+            background-color: #8e44ad;
+        }
+    </style>
+</head>
+<body>
+    <h1>中药知识测验2</h1>
+    
+    <div id="quizContainer">
+        <!-- 题目将在这里动态添加 -->
+    </div>
+    
+    <div class="score-display" id="scoreDisplay">得分: 0/0</div>
+    
+    <button class="restart-btn" onclick="restartQuiz()">↻ 重新考试</button>
+    
+    <script>
+        let score = 0;
+        let totalQuestions = 0;
+        let answeredQuestions = 0;
+        let currentQuestions = [];
+        
+        // 所有题目数据
+const questionsData = [
+{
+    question: "“升浮”属____，“沉降”属____。",
+    options: ["A. 阳；阴", "B. 阴；阳", "C. 表；里", "D. 寒；热"],
+    answer: "A"
+},
+{
+    question: "五味归经中，酸味主要入哪一脏？",
+    options: ["A. 心", "B. 肝", "C. 脾", "D. 肺"],
+    answer: "B"
+},
+{
+    question: "中国历史上第一部官修本草是？",
+    options: ["A. 《本草纲目》", "B. 《新修本草》", "C. 《神农本草经》", "D. 《雷公炮炙论》"],
+    answer: "C"
+},
+{
+    question: "“四大怀药”不包括以下哪种？",
+    options: ["A. 地黄", "B. 牛膝", "C. 人参", "D. 山药"],
+    answer: "C"
+},
+{
+    question: "妊娠禁用药是？",
+    options: ["A. 牛膝", "B. 巴豆", "C. 红花", "D. 大黄"],
+    answer: "B"
+},
+{
+    question: "煎药忌用的器具是？",
+    options: ["A. 陶瓷砂锅", "B. 铁锅", "C. 玻璃罐", "D. 紫砂壶"],
+    answer: "B"
+},
+{
+    question: "“母子”关系在五行中是指？",
+    options: ["A. 相生", "B. 相克", "C. 相乘", "D. 相侮"],
+    answer: "A"
+},
+{
+    question: "弦脉多见于哪种病症？",
+    options: ["A. 肝胆病", "B. 肺病", "C. 心病", "D. 肾病"],
+    answer: "A"
+},
+{
+    question: "“假神”的表现为？",
+    options: ["A. 突然颧赤如妆", "B. 面色苍白", "C. 四肢冰冷", "D. 呼吸微弱"],
+    answer: "A"
+},
+{
+    question: "头顶痛属于哪条经脉？",
+    options: ["A. 阳明经", "B. 少阳经", "C. 太阳经", "D. 厥阴经"],
+    answer: "D"
+},
+{
+    question: "“肝”在五行中属____，其华在____。",
+    options: ["A. 木；爪", "B. 火；面", "C. 土；唇", "D. 金；毛"],
+    answer: "A"
+},
+{
+    question: "“心”在五志中对应的是？",
+    options: ["A. 怒", "B. 喜", "C. 思", "D. 悲"],
+    answer: "B"
+},
+{
+    question: "“脾”在五液中分泌的是？",
+    options: ["A. 泪", "B. 汗", "C. 涎", "D. 涕"],
+    answer: "C"
+},
+{
+    question: "“肺开窍于____，其液为____。”",
+    options: ["A. 目；泪", "B. 鼻；涕", "C. 口；涎", "D. 耳；唾"],
+    answer: "B"
+},
+{
+    question: "“肾为先天之本”，其主____，华在____。",
+    options: ["A. 水；发", "B. 骨；发", "C. 髓；爪", "D. 精；面"],
+    answer: "B"
+},
+{
+    question: "麻黄汤的组成不包括？",
+    options: ["A. 麻黄", "B. 桂枝", "C. 白芍", "D. 炙甘草"],
+    answer: "C"
+},
+{
+    question: "“浙八味”不包括以下哪种？",
+    options: ["A. 白术", "B. 白芍", "C. 人参", "D. 玄参"],
+    answer: "C"
+},
+{
+    question: "“四大南药”是？",
+    options: ["A. 阳春砂、巴戟天、槟榔、益智仁", "B. 黄连、人参、地黄、山药", "C. 白术、白芍、贝母、菊花", "D. 乌梅、玄参、防风、黄芪"],
+    answer: "A"
+},
+{
+    question: "“十八反”中，甘草反？",
+    options: ["A. 甘遂", "B. 丁香", "C. 人参", "D. 官桂"],
+    answer: "A"
+},
+{
+    question: "“后下药”煎煮时间为？",
+    options: ["A. 5-10分钟", "B. 15-20分钟", "C. 30分钟", "D. 1小时"],
+    answer: "A"
+},
+{
+    question: "“胃脘刺痛，痛有定处”属于？",
+    options: ["A. 气滞", "B. 血瘀", "C. 痰湿", "D. 虚寒"],
+    answer: "B"
+},
+{
+    question: "“燥苔”的特点是？",
+    options: ["A. 干枯无津", "B. 湿润滑腻", "C. 黄厚腻", "D. 白滑"],
+    answer: "A"
+},
+{
+    question: "“舌中”对应哪一脏腑？",
+    options: ["A. 心肺", "B. 脾胃", "C. 肝胆", "D. 肾"],
+    answer: "B"
+},
+{
+    question: "“滋水涵木法”是指？",
+    options: ["A. 滋肾阴以养肝阴", "B. 温肾阳以补脾阳", "C. 补脾气以益肺气", "D. 疏肝健脾"],
+    answer: "A"
+},
+{
+    question: "“益火补土法”中的“火”指？",
+    options: ["A. 心火", "B. 命门火（肾阳）", "C. 肝火", "D. 肺火"],
+    answer: "B"
+},
+{
+    question: "《难经》提到“见肝之病，知肝传脾”，体现了五行中的？",
+    options: ["A. 相生", "B. 相克", "C. 相乘", "D. 相侮"],
+    answer: "B"
+},
+{
+    question: "《神农本草经》记载药物多少种？",
+    options: ["A. 365", "B. 730", "C. 1892", "D. 1200"],
+    answer: "A"
+},
+{
+    question: "《雷公炮炙论》是？",
+    options: ["A. 最早的中药炮制专著", "B. 第一部官修本草", "C. 现代药学辞典", "D. 方剂学著作"],
+    answer: "A"
+},
+{
+    question: "“有诸内，必形诸外”出自？",
+    options: ["A. 《孟子》", "B. 《黄帝内经》", "C. 《伤寒论》", "D. 《难经》"],
+    answer: "A"
+},
+{
+    question: "“能合色脉，可以万全”出自？",
+    options: ["A. 《素问》", "B. 《本草纲目》", "C. 《新修本草》", "D. 《雷公炮炙论》"],
+    answer: "A"
+}
+           ];
+        
+        // 随机排列数组
+        function shuffleArray(array) {
+            const newArray = [...array];
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+        
+        // 准备题目数据（随机题目和选项顺序）
+        function prepareQuestions() {
+            const shuffledQuestions = shuffleArray(questionsData);
+            return shuffledQuestions.map(question => {
+                const originalAnswer = question.answer;
+                const optionPairs = question.options.map(opt => ({
+                    letter: opt.charAt(0),
+                    text: opt.substring(3)
+                }));
+                const shuffledOptions = shuffleArray(optionPairs);
+                const newOptions = shuffledOptions.map((opt, index) => {
+                    const newLetter = String.fromCharCode(65 + index);
+                    return `${newLetter}. ${opt.text}`;
+                });
+                const originalOption = optionPairs.find(opt => opt.letter === originalAnswer);
+                const newAnswerIndex = shuffledOptions.findIndex(opt => 
+                    opt.text === originalOption.text
+                );
+                const newAnswer = String.fromCharCode(65 + newAnswerIndex);
+                return {
+                    question: question.question,
+                    options: newOptions,
+                    answer: newAnswer
+                };
+            });
+        }
+        
+        // 初始化测验
+        function initQuiz() {
+            const quizContainer = document.getElementById('quizContainer');
+            quizContainer.innerHTML = '';
+            currentQuestions = prepareQuestions();
+            totalQuestions = currentQuestions.length;
+            
+            currentQuestions.forEach((questionData, index) => {
+                const questionNumber = index + 1;
+                const questionId = 'q' + questionNumber;
+                const feedbackId = 'feedback' + questionNumber;
+                
+                const questionHTML = `
+                    <div id="quiz${questionNumber}" class="quiz-container">
+                        <div class="question">${questionNumber}. ${questionData.question}</div>
+                        <div class="options" id="options${questionNumber}">
+                            ${questionData.options.map(option => `
+                                <label class="option">
+                                    <input type="radio" name="${questionId}" value="${option.charAt(0)}">
+                                    ${option}
+                                </label>
+                            `).join('')}
+                        </div>
+                        <button class="submit-btn" onclick="checkAnswer('${questionId}', '${questionData.answer}', '${feedbackId}', ${questionNumber})">提交答案</button>
+                        <div id="${feedbackId}" class="feedback"></div>
+                    </div>
+                `;
+                
+                quizContainer.insertAdjacentHTML('beforeend', questionHTML);
+            });
+            
+            resetScore();
+        }
+        
+        // 检查答案
+        function checkAnswer(questionName, correctAnswer, feedbackId, questionNumber) {
+            const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
+            const feedbackElement = document.getElementById(feedbackId);
+            const questionElement = document.getElementById('quiz' + questionNumber);
+            
+            if (!selectedOption) {
+                feedbackElement.textContent = "请先选择一个答案！";
+                feedbackElement.className = "feedback incorrect";
+                feedbackElement.style.display = "block";
+                return;
+            }
+            
+            const userAnswer = selectedOption.value;
+            if (userAnswer === correctAnswer) {
+                feedbackElement.textContent = "✓ 回答正确！";
+                feedbackElement.className = "feedback correct";
+                score++;
+            } else {
+                feedbackElement.textContent = `✗ 回答错误。正确答案是: ${correctAnswer}`;
+                feedbackElement.className = "feedback incorrect";
+            }
+            
+            feedbackElement.style.display = "block";
+            answeredQuestions++;
+            updateScore();
+            
+            const options = document.querySelectorAll(`#quiz${questionNumber} input[name="${questionName}"]`);
+            options.forEach(option => {
+                option.disabled = true;
+            });
+            questionElement.querySelector('.submit-btn').disabled = true;
+        }
+        
+        // 更新分数显示
+        function updateScore() {
+            document.getElementById("scoreDisplay").textContent = `得分: ${score}/${answeredQuestions}`;
+        }
+        
+        // 重置分数
+        function resetScore() {
+            score = 0;
+            answeredQuestions = 0;
+            updateScore();
+        }
+        
+        // 重新考试
+        function restartQuiz() {
+            if (confirm('确定要重新开始考试吗？当前进度将丢失。')) {
+                initQuiz();
+            }
+        }
+        
+        // 初始化测验
+        initQuiz();
+    </script>
+</body>
+</html>
